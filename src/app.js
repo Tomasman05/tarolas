@@ -1,7 +1,8 @@
 const doc = {
     getButton : document.querySelector("#getButton"),
     setButton : document.querySelector("#setButton"),
-    delButton : document.querySelector("#delButton")
+    delButton : document.querySelector("#delButton"),
+    passwordOutput: document.querySelector("#password")
 }
 window.addEventListener("load", ()=>{
     init()
@@ -25,8 +26,9 @@ function startSet(){
 }
 function startGet(){
     let pass = localStorage.getItem("jelszó")
-    console.log(pass)
+    doc.passwordOutput.value = pass
 }
 function startDel(){
     localStorage.removeItem("jelszó")
+    doc.passwordOutput.value = ""
 }
